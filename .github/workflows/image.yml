@@ -25,6 +25,6 @@ jobs:
       - name: Build & push
         uses: docker/build-push-action@v5
         with:
-          context: ./microservices-project-feature-sqs/product-service
+          context: ./product-service
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/product-service:latest
