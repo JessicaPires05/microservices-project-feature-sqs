@@ -13,6 +13,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build jar
+        run: mvn clean package
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
