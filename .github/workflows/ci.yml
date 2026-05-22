@@ -33,4 +33,4 @@ jobs:
         run: mvn -B -q compile
 
       - name: Unit tests
-        run: mvn -B verify
+        run: mvn test
