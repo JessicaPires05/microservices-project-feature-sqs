@@ -21,8 +21,8 @@ jobs:
 
       - name: Build jar
         run: mvn clean package
-        working-directory: ./product-service
-        
+        working-directory: ./microservices-project-feature-sqs/product-service
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -35,6 +35,6 @@ jobs:
       - name: Build & push
         uses: docker/build-push-action@v5
         with:
-          context: ./product-service
+          context: ./microservices-project-feature-sqs/product-service
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/product-service:latest
