@@ -33,7 +33,7 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1
 
-        
+
       - name: Validate POM
         run: mvn -B -q validate
 
