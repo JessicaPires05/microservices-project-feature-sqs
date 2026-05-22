@@ -13,6 +13,10 @@ jobs:
   java-build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        java: [ 17, 21 ]
+
     defaults:
       run:
         working-directory: ./microservices-project-feature-sqs/product-service
@@ -24,7 +28,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: ${{ matrix.java }}
           cache: maven
 
       - name: Configure AWS credentials
